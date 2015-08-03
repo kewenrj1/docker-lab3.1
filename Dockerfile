@@ -7,8 +7,10 @@ RUN apt-get -y install apache2
 RUN apt-get -y install supervisor
 RUN mkdir /var/run/sshd
 
+ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 RUN useradd -m -G sudo user
 RUN echo 'user:P@ssw0rd' | chpasswd
 
 EXPOSE 22 80
-CMD [""]
+CMD ["/usr/sbin/supervisord"]
