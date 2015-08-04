@@ -14,3 +14,5 @@ RUN echo 'user:P@ssw0rd' | chpasswd
 
 EXPOSE 22 80
 CMD ["/usr/sbin/supervisord"]
+
+#successfully built
